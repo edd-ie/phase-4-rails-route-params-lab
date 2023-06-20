@@ -1,12 +1,12 @@
 class StudentsController < ApplicationController
 
   def index
-    students = if params[:name]
-                  Student.name_search(params[:name])
-                else
-                  Student.all
-                end
-    # students = Student.all
+    students = 
+      if params[:name]
+        Student.name_search(params[:name])
+      else
+        Student.all
+      end
     render json: students
   end
 
